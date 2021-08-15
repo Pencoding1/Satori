@@ -1,6 +1,8 @@
 from kivy.config import Config
 Config.set('kivy', 'default_font', ['SVN-Have Heart 2', 'resources/SVN-Have Heart 2.ttf'])
 
+import os, sys
+from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen
@@ -234,4 +236,6 @@ class SatoriApp(App):
             self.sound.stop()
             
 if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
     SatoriApp().run()
