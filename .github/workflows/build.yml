@@ -2,16 +2,12 @@ name: Build (with Buildozer master)
 on:
   push:
     branches-ignore:
-      - data
-      - gh-pages
+      - main
     tags:
       - '**'
   pull_request:
     branches-ignore:
-      - data
-      - gh-pages
-  schedule:
-      - cron: 0 0 */4 * * # at 00:00 UTC every fourth day
+      - main
 
 jobs:
   # Build job. Builds app for Android with Buildozer
@@ -42,8 +38,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: alter
-          ref: alter # Branch name
+          path: kivymd/storage
+          ref: binaries # Branch name
 
       - name: Set up Python
         uses: actions/setup-python@v2
