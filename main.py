@@ -2,6 +2,7 @@ from kivy.config import Config
 Config.set('kivy', 'default_font', ['SVN-Have Heart 2', 'resources/SVN-Have Heart 2.ttf'])
 
 from kivy.app import App
+from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty, StringProperty
@@ -205,6 +206,7 @@ class SatoriApp(App):
         self.icon = 'resources/icon.png'
         self.title = 'Satori Komeiji'
         Window.size = (1280,720)
+        return Builder.load_file('resources/GUI.kv')
     
     def callback(self, *args):
         '''Tôi phải viết hàm này vì nếu loading_screen là screen 0 thì nó sẽ không kích hoạt event on_enter.

@@ -21,7 +21,7 @@ a = Analysis(['main.py'],
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
-exe = EXE(pyz, Tree('D:\\Coding\\projekt Satori Komeiji\\New folder'),
+exe = EXE(pyz, 
           a.scripts,
           a.binaries,
           a.zipfiles,

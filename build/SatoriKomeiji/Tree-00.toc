@@ -1,7 +1,0 @@
-('D:\\Coding\\projekt Satori Komeiji\\New folder',
- None,
- [],
- 'DATA',
- [('Satori.kv',
-   'D:\\Coding\\projekt Satori Komeiji\\New folder\\Satori.kv',
-   'DATA')])
