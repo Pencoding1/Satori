@@ -1,0 +1,21 @@
+Start
+Satori will read your mind !
+Please think to an integer in range 1000.
+Satori will ask you 10 questions.
+You only have to answer "Yes" or "No".
+Question number 
+Is the number you think bigger than 
+ ?
+Yes
+No
+The number you think is 
+Do it again
+A gift from the developer
+Thank you for playing it for 10 times.
+You can use your mobile phone
+to scan it or take a screenshot
+and use qr upload.
+The pefect thought
+Forgoten memory
+Reimu's donation money
+Never get more than 300 JPY...
