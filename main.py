@@ -198,7 +198,7 @@ class SatoriApp(App):
     temp = StringProperty('normal')
     
     def build(self):
-        return Builder.load_file('resources/GUI.kv')
+        return Builder.load_file(cache.path + 'resources/GUI.kv')
         
     def callback(self, *args):
         '''Tôi phải viết hàm này vì nếu loading_screen là screen 0 thì nó sẽ không kích hoạt event on_enter.
