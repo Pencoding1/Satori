@@ -5,61 +5,61 @@ temp1 = 500.0
 num = temp1
 count_q = 1
 languages = []
+wallpapers = []
+stickers = []
 content = []
+ost = []
 img_source = ''
 sound_source = ''
 temp2 = 0
+count = 0
+path = ''
 
-try:
-    temp = open('config.ini', mode = 'r' , encoding = 'utf-8')
-    count = int(temp.readline())
-    lang = temp.readline()
-    temp.close()
-except:
-    lang = 'Tiếng Việt'
-    count = 0
-
-try:
-    temp = open('cache.txt', mode = 'r', encoding = 'utf-8')
-    eggs = temp.read().splitlines()
-    temp.close()
-except:
-    pass
-
-temp = listdir('resources/ost/')
-for temp0 in temp:
-    #Chỉ chấp nhận định dạng tệp .mp3. Loại bỏ tất cả những thứ không phải khỏi python list.
-    #Only accpet .mp3 file format. The others will be remove from the python list.
-    if temp0.find('.mp3') == -1:
-        temp.remove(temp0)
-ost = temp
-
-temp = listdir('resources/languages/')
-for temp0 in temp:
-    #Chỉ chấp nhận định dạng tệp .txt. Loại bỏ tất cả những thứ không phải khỏi python list.
-    #Only accpet .txt file format. The others will be remove from the python list.
-    if temp0.find('.txt') == -1:
-        temp.remove(temp0)
-    else:
-        languages.append(temp0[:-4])
+def init():
+    global path
+    global wallpapers
+    global languages
+    global stickers
+    global ost
+    
+    temp = listdir(path + 'resources/ost/')
+    for temp0 in temp:
+        #Chỉ chấp nhận định dạng tệp .mp3. Loại bỏ tất cả những thứ không phải khỏi python list.
+        #Only accpet .mp3 file format. The others will be remove from the python list.
+        if temp0.find('.mp3') == -1:
+            temp.remove(temp0)
+    ost = temp
+    
+    temp = listdir(path + 'resources/languages/')
+    for temp0 in temp:
+        #Chỉ chấp nhận định dạng tệp .txt. Loại bỏ tất cả những thứ không phải khỏi python list.
+        #Only accpet .txt file format. The others will be remove from the python list.
+        if temp0.find('.txt') == -1:
+            temp.remove(temp0)
+        else:
+            languages.append(temp0[:-4])
+    
+    stickers = img_scan('stickers')
+    wallpapers = img_scan('wallpapers')
+    change_lang()
+    ran_img(False)
         
-def img_scan(path):
+def img_scan(name):
+    global path
     #Chỉ chấp nhận định dạng tệp .png. Loại bỏ tất cả những thứ không phải khỏi python list.
     #Only accpet .png file format. The others will be remove from the python list.
-    temp = listdir('resources/' + path)
+    temp = listdir(path + 'resources/' + name)
     for temp0 in temp:
         if temp0.find('.png') == -1:
             temp.remove(temp0)
     return temp
 
-stickers = img_scan('stickers')
-wallpapers = img_scan('wallpapers')
-
 def ran_music():
     '''Lấy ngẫu nhiên 1 bản ost.
     Randomly pick an ost.'''
     global sound_source
-    sound_source = 'resources/ost/' + choice(ost)
+    global path
+    sound_source = path + 'resources/ost/' + choice(ost)
 
 def read_mind(temp0):
     '''Thuật toán thu hẹp phạm vi. Lấy 1000 liên tiếp chia cho 2 rồi cộng với số đã hỏi ở câu trước.
@@ -106,38 +106,17 @@ def ran_img(temp):
     '''Lấy ngẫu nhiên 1 bức ảnh.
     Randomly pick a picture.'''
     global img_source
+    global path
     if temp == True:
-        img_source = 'resources/stickers/' + choice(stickers)
+        img_source = path + 'resources/stickers/' + choice(stickers)
     else:
-        img_source = 'resources/wallpapers/' + choice(wallpapers)
+        img_source = path + 'resources/wallpapers/' + choice(wallpapers)
 
-def easter_egg(temp):
-    try:
-        int(temp)
-        save_config()
-    except:
-        temp0 = open('cache.txt', mode = 'a+',encoding = 'utf-8')
-        temp0.write(temp + '\n')
-        temp0.close()
-
-def save_config():
-    global lang
-    global config
-    temp = open('config.ini',mode = 'w', encoding = 'utf-8')
-    temp.write(str(count) + '\n')
-    temp.write(lang)
-    temp.close()
-
-def change_lang(lang0):
+def change_lang(lang = 'Tiếng Việt'):
     '''Đọc dữ liệu từ file ngôn ngữ.
     Read data from the language file.'''
     global content
-    global lang
-    lang = lang0
-    temp = open('resources/languages/' + lang0 + '.txt', mode = 'r', encoding = 'utf-8')
+    global path
+    temp = open(path + 'resources/languages/' + lang + '.txt', mode = 'r', encoding = 'utf-8')
     content = temp.read().splitlines()
     temp.close()
-    save_config()
-
-change_lang(lang)
-ran_img(False)

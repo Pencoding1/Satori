@@ -1,6 +1,8 @@
 from kivy.config import Config
 Config.set('kivy', 'default_font', ['SVN-Have Heart 2', 'resources/SVN-Have Heart 2.ttf'])
 
+import os, sys
+from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
@@ -36,6 +38,8 @@ class Menu(Screen):
         self.lbl.text = '\n'.join(cache.content[1:5])
         cache.ran_img(True)
         self.img.source = cache.img_source
+        if cache.count == 3:
+            Gift().open()
         
     def callback0(self, temp):
         '''Tôi phải tạo hàm vì có vẻ như root.manager.transition không hoạt động bên trong file kv.
@@ -86,23 +90,11 @@ class Result(Screen):
         '''Kích hoạt Easter Egg nếu đạt điều kiện.
         Trigger the Easter Egg if the coditon is met.'''
         if cache.num == 999:
-            try:
-                cache.eggs.index('pefect')
-            except:
-                cache.easter_egg('pefect')
-                Pefect().open()
+            Pefect().open()
         elif cache.num == 333:
-            try:
-                cache.eggs.index('memory')
-            except:
-                cache.easter_egg('memory')
-                Memory().open()
+            Memory().open()
         elif cache.num == 300:
-            try:
-                cache.eggs.index('donate')
-            except:
-                cache.easter_egg('donate')
-                Donate().open()
+            Donate().open()
 
 class Final(Screen):
     
@@ -236,4 +228,8 @@ class SatoriApp(App):
             self.sound.stop()
  
 if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
+        cache.path = sys._MEIPASS
+    cache.init()
     SatoriApp().run()
