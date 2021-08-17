@@ -7,7 +7,7 @@ title = Satori Komeiji
 package.name = satori
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.satori
+package.domain = com.
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -19,7 +19,7 @@ source.include_exts =
 #source.include_patterns = 
 
 # (list) Source files to exclude (let empty to not exclude anything)
-source.exclude_exts = spec, txt, md
+source.exclude_exts = spec, md
 
 # (list) List of directory to exclude (let empty to not exclude anything)
 source.exclude_dirs = data
