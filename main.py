@@ -122,7 +122,7 @@ class Menu(Screen):
         Update data for the buttons and the labels in case changing the language or guessing the number.'''
         self.btn.text = cache.content[0]
         self.lbl.text = '\n'.join(cache.content[1:5])
-        if cache.count == 10:
+        if cache.count == 3:
                 Gift().open()
         
     def callback0(self, temp):
@@ -141,9 +141,9 @@ class Menu(Screen):
         Change the image by the button state.'''
         app = App.get_running_app()
         if state == 'normal':
-            self.speaker.source = cache.path + 'resources/speaker.png'
+            self.speaker.source = os.path.join(cache.path, 'resources/speaker.png')
         else:
-            self.speaker.source = cache.path + 'resources/speaker_mute.png'
+            self.speaker.source = os.path.join(cache.path, 'resources/speaker_mute.png')
         app.temp = state
 
 class Ask(Screen):
