@@ -1,5 +1,5 @@
 from kivy.config import Config
-Config.set('kivy', 'default_font', ['SVN-Have Heart 2', 'resources/SVN-Have Heart 2.ttf'])
+Config.set('kivy', 'default_font', ['SVN-Have Heart 2', cache.path + 'resources/SVN-Have Heart 2.ttf'])
 
 import os, sys
 from kivy.resources import resource_add_path, resource_find
