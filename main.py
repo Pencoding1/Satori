@@ -69,22 +69,10 @@ class Result(Screen):
         '''Kích hoạt Easter Egg nếu đạt điều kiện.
         Trigger the Easter Egg if the coditon is met.'''
         if cache.num == 999:
-            try:
-                cache.eggs.index('pefect')
-            except:
-                cache.easter_egg('pefect')
                 Pefect().open()
         elif cache.num == 333:
-            try:
-                cache.eggs.index('memory')
-            except:
-                cache.easter_egg('memory')
                 Memory().open()
         elif cache.num == 300:
-            try:
-                cache.eggs.index('donate')
-            except:
-                cache.easter_egg('donate')
                 Donate().open()
 
 class Final(Screen):
@@ -112,7 +100,6 @@ class Final(Screen):
         if temp == False:
             cache.num = cache.num + 1
         cache.count = cache.count + 1
-        cache.save_config()
         app.root.transition.direction = 'left'
         app.root.current = 'result'
     
@@ -205,7 +192,7 @@ class SatoriApp(App):
         self.icon = 'resources/icon.png'
         self.title = 'Satori Komeiji'
         Window.size = (1280,720)
-        return Builder.load_file(cache.path + 'resources/GUI.kv')
+        return Builder.load_file(os.path.join(cache.path, 'resources/GUI.kv'))
     
     def callback(self, *args):
         '''Tôi phải viết hàm này vì nếu loading_screen là screen 0 thì nó sẽ không kích hoạt event on_enter.
@@ -237,6 +224,6 @@ class SatoriApp(App):
 if __name__ == '__main__':
     if hasattr(sys, '_MEIPASS'):
         resource_add_path(os.path.join(sys._MEIPASS))
-        cache.path = sys._MEIPASS + '/'
+        cache.path = sys._MEIPASS
     cache.init()
     SatoriApp().run()
