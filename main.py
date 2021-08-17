@@ -57,9 +57,9 @@ class Menu(Screen):
         Change the image by the button state.'''
         app = App.get_running_app()
         if state == 'normal':
-            self.speaker.source = 'resources/speaker.png'
+            self.speaker.source = cache.path + 'resources/speaker.png'
         else:
-            self.speaker.source = 'resources/speaker_mute.png'
+            self.speaker.source = cache.path + 'resources/speaker_mute.png'
         app.temp = state
             
 class Result(Screen):
