@@ -1,6 +1,7 @@
 #kivy 2.0.0
 #:import utils kivy.utils
 #:import cache cache
+#:import os os
 
 <Donate>:
 	title: cache.content[19]
@@ -8,7 +9,8 @@
 	title_align: 'center'
 	title_color: '#ca3741'
 	separator_color: '#ffffff'
-	background: cache.path + 'resources/popup.png'
+	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
+	background: os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.9, .6]
 	auto_dismiss: False
 	
@@ -22,7 +24,7 @@
 			font_size: self.width / 15
 		
 		Img:
-			source: cache.path + 'resources/reimu.zip'
+			source: os.path.join(cache.path, 'resources/reimu.zip')
 			anim_delay: .01
 			size_hint_y: .7
 			
@@ -42,9 +44,10 @@
 	title: cache.content[17]
 	title_size: self.width / 15
 	title_align: 'center'
+	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	title_color: '#ffffff'
 	separator_color: '#ca3741'
-	background: cache.path + 'resources/crino.png'
+	background: os.path.join(cache.path, 'resources/crino.png')
 	size_hint:[.9, .5]
 	auto_dismiss: False
 	
@@ -52,7 +55,7 @@
 		orientation: 'vertical'
 		
 		Img:
-			source: cache.path + 'resources/crino.zip'
+			source: os.path.join(cache.path, 'resources/crino.zip')
 			size_hint_y: .85
 			anim_delay: .01
 			
@@ -71,8 +74,9 @@
 	title_size: self.width / 15
 	title_align: 'center'
 	title_color: '#c077a4'
+	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	separator_color: '#ffffff'
-	background: cache.path + 'resources/popup.png'
+	background: os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.7, .8]
 	auto_dismiss: False
 	
@@ -84,7 +88,7 @@
 			size_hint_y: .1
 			font_size: self.width / 15
 		Img:
-			source: cache.path + 'resources/gift.png'
+			source: os.path.join(cache.path, 'resources/gift.png')
 			size_hint_y: .5
 			
 		Lbl:
@@ -104,7 +108,8 @@
 	title_align: 'center'
 	title_color: '#c077a4'
 	separator_color: '#ffffff'
-	background: cache.path + 'resources/popup.png'
+	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
+	background:os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.9, .6]
 	auto_dismiss: False
 	
@@ -112,7 +117,7 @@
 		orientation: 'vertical'
 		
 		Img:
-			source: cache.path + 'resources/memory.png'
+			source: os.path.join(cache.path, 'resources/memory.png')
 			size_hint_y: .85
 			
 		Label:
@@ -145,7 +150,7 @@
 			
 		Lbl_top:
 			id: lbl1
-			font_name: cache.path + 'resources/SVN-Hemi Head.ttf'
+			font_name: os.path.join(cache.path, 'resources/SVN-Hemi Head.ttf')
 			size_hint_y: .1
 		
 		Img:
@@ -196,7 +201,7 @@
 		
 		Img:
 			size_hint_y: .15
-			source: cache.path + 'resources/heading.png'
+			source: os.path.join(cache.path, 'resources/heading.png')
 			
 		Lbl:
 			size_hint_y: .25
@@ -383,23 +388,23 @@ Root:
 		name: 'result'
 			
 <Btn@Button>:
-	font_name: cache.path + 'resources/SVN-Hemi Head.ttf'
+	font_name: os.path.join(cache.path, 'resources/SVN-Hemi Head.ttf')
 	font_size: self.width / 5
-	background_normal: cache.path + 'resources/button_normal.png'
-	background_down: cache.path + 'resources/button_down.png'
+	background_normal: os.path.join(cache.path, 'resources/button_normal.png')
+	background_down: os.path.join(cache.path, 'resources/button_down.png')
 	color: '#c077a4'
 	size: self.texture_size
 	
 <Spn_option@SpinnerOption+Btn>:
 	font_size: self.width / 6
-	background_down: cache.path + 'resources/spinner_down.png'
-	background_normal: cache.path + 'resources/spinner_normal.png'
+	background_down: os.path.join(cache.path, 'resources/spinner_down.png')
+	background_normal: os.path.join(cache.path, 'resources/spinner_normal.png')
 	height: self.font_size * 4
 	
 <Spn@Spinner+Btn>:
 	option_cls: 'Spn_option'
-	background_normal: cache.path + 'resources/spinner_normal.png'
-	background_down: cache.path + 'resources/spinner_down.png'
+	background_normal: os.path.join(cache.path, 'resources/spinner_normal.png')
+	background_down: os.path.join(cache.path, 'resources/spinner_down.png')
 	font_size: self.width / 6
 
 <Img@Image>:
@@ -417,7 +422,7 @@ Root:
 			pos: self.pos
 			
 <Lbl_top@Label>:
-	font_name: cache.path + 'resources/UTM Deutsch Gothic.ttf'
+	font_name: os.path.join(cache.path, 'resources/UTM Deutsch Gothic.ttf')
 	color: '#f96466'
 	font_size: self.width / 10
 			
@@ -426,12 +431,12 @@ Root:
 		Rectangle:
 			size: self.size
 			pos: self.pos
-			source: cache.path + 'resources/texture.png'
+			source: os.path.join(cache.path, 'resources/texture.png')
 	
 <Lbl@Bg_lbl+Lbl_top>:
 	#Ýe, label với 1 phông nền sếch xi.
 	#Yes, label with a sexy background.
-	font_name: cache.path + 'resources/SFUBelleRegular.ttf'
+	font_name: os.path.join(cache.path, 'resources/SFUBelleRegular.ttf')
 	color: '#000000'
 	font_size: self.width / 20
 	size: self.texture_size
@@ -439,10 +444,10 @@ Root:
 	halign: 'center'
 	
 <Speaker@ToggleButtonBehavior+Img>:
-	source: cache.path + 'resources/speaker.png'
+	source: os.path.join(cache.path, 'resources/speaker.png')
 	size_hint: [.1, .1]
 	allow_no_selection: False
 	
 <Home@ButtonBehavior+Img>:
-	source: cache.path + 'resources/home.png'
+	source: os.path.join(cache.path, 'resources/home.png')
 	size_hint: [.1, .1]

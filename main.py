@@ -1,6 +1,4 @@
 from kivy.config import Config
-Config.set('kivy', 'default_font', ['SVN-Have Heart 2', cache.path + 'resources/SVN-Have Heart 2.ttf'])
-
 import os, sys
 from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
@@ -57,9 +55,9 @@ class Menu(Screen):
         Change the image by the button state.'''
         app = App.get_running_app()
         if state == 'normal':
-            self.speaker.source = cache.path + 'resources/speaker.png'
+            self.speaker.source = os.path.join(cache.path, 'resources/speaker.png')
         else:
-            self.speaker.source = cache.path + 'resources/speaker_mute.png'
+            self.speaker.source = os.path.join(cache.path, 'resources/speaker_mute.png')
         app.temp = state
             
 class Result(Screen):
@@ -121,7 +119,6 @@ class Final(Screen):
         if temp == False:
             cache.num = cache.num + 1
         cache.count = cache.count + 1
-        cache.save_config()
         app.root.transition.direction = 'left'
         app.root.current = 'result'
         
@@ -198,7 +195,7 @@ class SatoriApp(App):
     temp = StringProperty('normal')
     
     def build(self):
-        return Builder.load_file(cache.path + 'resources/GUI.kv')
+        return Builder.load_file(os.path.join(cache.path, 'resources/GUI.kv'))
         
     def callback(self, *args):
         '''Tôi phải viết hàm này vì nếu loading_screen là screen 0 thì nó sẽ không kích hoạt event on_enter.
@@ -228,8 +225,6 @@ class SatoriApp(App):
             self.sound.stop()
  
 if __name__ == '__main__':
-    if hasattr(sys, '_MEIPASS'):
-        resource_add_path(os.path.join(sys._MEIPASS))
-        cache.path = sys._MEIPASS
+    cache.path = os.getcwd()
     cache.init()
     SatoriApp().run()
