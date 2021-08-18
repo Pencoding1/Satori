@@ -7,7 +7,7 @@ title = Satori Komeiji
 package.name = satori
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = vn.
+package.domain = vn
 
 # (str) Source code where the main.py live
 source.dir = .
