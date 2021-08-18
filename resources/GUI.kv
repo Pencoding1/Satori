@@ -7,8 +7,8 @@
 	title: cache.content[19]
 	title_size: self.width / 15
 	title_align: 'center'
-	title_color: '#ca3741'
-	separator_color: '#ffffff'
+	title_color:  utils.get_color_from_hex('#ca3741')
+	separator_color: utils.get_color_from_hex('#ffffff')
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	background: os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.9, .6]
@@ -19,7 +19,7 @@
 		
 		Lbl_top:
 			size_hint_y: .15
-			color: '#000000'
+			color: utils.get_color_from_hex('#000000')
 			text: cache.content[20]
 			font_size: self.width / 15
 		
@@ -38,15 +38,15 @@
 			size_hint: [.3, .1]
 			disable: True
 			pos_hint: {'center_x': .5}
-			color: '#c077a4'
+			color: utils.get_color_from_hex('#c077a4')
 
 <Pefect>:
 	title: cache.content[17]
 	title_size: self.width / 15
 	title_align: 'center'
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
-	title_color: '#ffffff'
-	separator_color: '#ca3741'
+	title_color: utils.get_color_from_hex('#ffffff')
+	separator_color: utils.get_color_from_hex('#ca3741')
 	background: os.path.join(cache.path, 'resources/crino.png')
 	size_hint:[.9, .5]
 	auto_dismiss: False
@@ -67,15 +67,15 @@
 			on_release: root.dismiss()
 			size_hint: [.3, .1]
 			pos_hint: {'center_x': .5}
-			color: '#0c78c1'
+			color: utils.get_color_from_hex('#0c78c1')
 
 <Gift>:
 	title: cache.content[12]
 	title_size: self.width / 15
 	title_align: 'center'
-	title_color: '#c077a4'
+	title_color: utils.get_color_from_hex('#c077a4')
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
-	separator_color: '#ffffff'
+	separator_color: utils.get_color_from_hex('#ffffff')
 	background: os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.7, .8]
 	auto_dismiss: False
@@ -106,8 +106,8 @@
 	title: cache.content[18]
 	title_size: self.width / 15
 	title_align: 'center'
-	title_color: '#c077a4'
-	separator_color: '#ffffff'
+	title_color: utils.get_color_from_hex('#c077a4')
+	separator_color: utils.get_color_from_hex('#ffffff')
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	background:os.path.join(cache.path, 'resources/popup.png')
 	size_hint:[.9, .6]
@@ -128,7 +128,7 @@
 			on_release: root.dismiss()
 			size_hint: [.3, .1]
 			pos_hint: {'center_x': .5}
-			color: '#c077a4'
+			color: utils.get_color_from_hex('#c077a4')
 
 <Result>:
 	name: 'result'
@@ -207,7 +207,7 @@
 			size_hint_y: .25
 			id: lbl
 			text: '\n'.join(cache.content[1:5])
-			font_size: 16
+			font_size: self.width / 22	
 		
 		Img:
 			id: img
@@ -389,10 +389,10 @@ Root:
 			
 <Btn@Button>:
 	font_name: os.path.join(cache.path, 'resources/SVN-Hemi Head.ttf')
-	font_size: 15
+	font_size: self.width / 5
 	background_normal: os.path.join(cache.path, 'resources/button_normal.png')
 	background_down: os.path.join(cache.path, 'resources/button_down.png')
-	color: '#c077a4'
+	color: utils.get_color_from_hex('#c077a4')
 	size: self.texture_size
 	
 <Spn_option@SpinnerOption+Btn>:
@@ -423,8 +423,8 @@ Root:
 			
 <Lbl_top@Label>:
 	font_name: os.path.join(cache.path, 'resources/UTM Deutsch Gothic.ttf')
-	color: '#f96466'
-	font_size: 14
+	color: utils.get_color_from_hex('#f96466')
+	font_size: self.width / 10
 			
 <Bg_lbl@Widget>:
 	canvas.before:
@@ -437,8 +437,8 @@ Root:
 	#Ýe, label với 1 phông nền sếch xi.
 	#Yes, label with a sexy background.
 	font_name: os.path.join(cache.path, 'resources/SFUBelleRegular.ttf')
-	color: '#000000'
-	font_size: 16
+	color: utils.get_color_from_hex('#000000')
+	font_size: self.width / 20
 	size: self.texture_size
 	valign: 'middle'
 	halign: 'center'
