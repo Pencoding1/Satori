@@ -112,7 +112,7 @@ def ran_img(temp):
     else:
         img_source = os.path.join(path, 'resources/wallpapers/', choice(wallpapers))
 
-def change_lang(lang = 'Tiếng Việt'):
+def change_lang(lang = 'Vietnamese'):
     '''Đọc dữ liệu từ file ngôn ngữ.
     Read data from the language file.'''
     global content
