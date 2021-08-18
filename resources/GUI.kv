@@ -207,7 +207,7 @@
 			size_hint_y: .25
 			id: lbl
 			text: '\n'.join(cache.content[1:5])
-			font_size: self.width / 22	
+			font_size: 16
 		
 		Img:
 			id: img
@@ -389,7 +389,7 @@ Root:
 			
 <Btn@Button>:
 	font_name: os.path.join(cache.path, 'resources/SVN-Hemi Head.ttf')
-	font_size: self.width / 5
+	font_size: 15
 	background_normal: os.path.join(cache.path, 'resources/button_normal.png')
 	background_down: os.path.join(cache.path, 'resources/button_down.png')
 	color: '#c077a4'
@@ -424,7 +424,7 @@ Root:
 <Lbl_top@Label>:
 	font_name: os.path.join(cache.path, 'resources/UTM Deutsch Gothic.ttf')
 	color: '#f96466'
-	font_size: self.width / 10
+	font_size: 14
 			
 <Bg_lbl@Widget>:
 	canvas.before:
@@ -438,7 +438,7 @@ Root:
 	#Yes, label with a sexy background.
 	font_name: os.path.join(cache.path, 'resources/SFUBelleRegular.ttf')
 	color: '#000000'
-	font_size: self.width / 20
+	font_size: 16
 	size: self.texture_size
 	valign: 'middle'
 	halign: 'center'
