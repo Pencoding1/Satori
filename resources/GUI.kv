@@ -11,7 +11,7 @@
 	separator_color: utils.get_color_from_hex('#ffffff')
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	background: os.path.join(cache.path, 'resources/popup.png')
-	size_hint:[.9, .6]
+	size_hint:[.9, .7]
 	auto_dismiss: False
 	
 	BoxLayout:
@@ -48,7 +48,7 @@
 	title_color: utils.get_color_from_hex('#ffffff')
 	separator_color: utils.get_color_from_hex('#ca3741')
 	background: os.path.join(cache.path, 'resources/crino.png')
-	size_hint:[.9, .5]
+	size_hint:[.9, .6]
 	auto_dismiss: False
 	
 	BoxLayout:
@@ -110,7 +110,7 @@
 	separator_color: utils.get_color_from_hex('#ffffff')
 	title_font: os.path.join(cache.path, 'resources/SVN-Have Heart 2.ttf')
 	background: os.path.join(cache.path, 'resources/popup.png')
-	size_hint:[.9, .6]
+	size_hint:[.9, .7]
 	auto_dismiss: False
 	
 	BoxLayout:
@@ -395,11 +395,16 @@ Root:
 	color: utils.get_color_from_hex('#c077a4')
 	size: self.texture_size
 	
-<Spn_option@SpinnerOption+Btn>:
+<Spn_option@SpinnerOption>:
 	font_size: self.width / 6
 	background_down: os.path.join(cache.path, 'resources/spinner_down.png')
 	background_normal: os.path.join(cache.path, 'resources/spinner_normal.png')
 	height: self.font_size * 4
+	color: utils.get_color_from_hex('#c077a4')
+	font_name: os.path.join(cache.path, 'resources/SVN-Hemi Head.ttf')
+	text_size: self.size
+	valign: 'middle'
+	halign: 'center'
 	
 <Spn@Spinner+Btn>:
 	option_cls: 'Spn_option'
