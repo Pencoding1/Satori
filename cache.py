@@ -13,42 +13,29 @@ img_source = ''
 sound_source = ''
 temp2 = 0
 count = 0
-path = ''
 
-def init():
-    global path
-    global wallpapers
-    global languages
-    global stickers
-    global ost
-    
-    temp = os.listdir(os.path.join(path, 'resources/ost/'))
-    for temp0 in temp:
-        #Chỉ chấp nhận định dạng tệp .mp3. Loại bỏ tất cả những thứ không phải khỏi python list.
-        #Only accpet .mp3 file format. The others will be remove from the python list.
-        if temp0.find('.mp3') == -1:
-            temp.remove(temp0)
-    ost = temp
-    
-    temp = os.listdir(os.path.join(path, 'resources/languages/'))
-    for temp0 in temp:
-        #Chỉ chấp nhận định dạng tệp .txt. Loại bỏ tất cả những thứ không phải khỏi python list.
-        #Only accpet .txt file format. The others will be remove from the python list.
-        if temp0.find('.txt') == -1:
-            temp.remove(temp0)
-        else:
-            languages.append(temp0[:-4])
-    
-    stickers = img_scan('stickers')
-    wallpapers = img_scan('wallpapers')
-    change_lang()
-    ran_img(False)
+temp = os.listdir('resources/ost')
+for temp0 in temp:
+    #Chỉ chấp nhận định dạng tệp .mp3. Loại bỏ tất cả những thứ không phải khỏi python list.
+    #Only accpet .mp3 file format. The others will be remove from the python list.
+    if temp0.find('.mp3') == -1:
+        temp.remove(temp0)
+ost = temp
+
+temp = os.listdir('resources/languages')
+for temp0 in temp:
+    #Chỉ chấp nhận định dạng tệp .txt. Loại bỏ tất cả những thứ không phải khỏi python list.
+    #Only accpet .txt file format. The others will be remove from the python list.
+    if temp0.find('.txt') == -1:
+        temp.remove(temp0)
+    else:
+        languages.append(temp0[:-4])
         
 def img_scan(name):
     global path
     #Chỉ chấp nhận định dạng tệp .png. Loại bỏ tất cả những thứ không phải khỏi python list.
     #Only accpet .png file format. The others will be remove from the python list.
-    temp = os.listdir(os.path.join(path, 'resources/', name))
+    temp = os.listdir(os.path.join('resources/', name))
     for temp0 in temp:
         if temp0.find('.png') == -1:
             temp.remove(temp0)
@@ -59,7 +46,7 @@ def ran_music():
     Randomly pick an ost.'''
     global sound_source
     global path
-    sound_source = os.path.join(path, 'resources/ost/', choice(ost))
+    sound_source = os.path.join('resources/ost/', choice(ost))
 
 def read_mind(temp0):
     '''Thuật toán thu hẹp phạm vi. Lấy 1000 liên tiếp chia cho 2 rồi cộng với số đã hỏi ở câu trước.
@@ -108,15 +95,20 @@ def ran_img(temp):
     global img_source
     global path
     if temp == True:
-        img_source = os.path.join(path, 'resources/stickers/', choice(stickers))
+        img_source = os.path.join('resources/stickers/', choice(stickers))
     else:
-        img_source = os.path.join(path, 'resources/wallpapers/', choice(wallpapers))
+        img_source = os.path.join('resources/wallpapers/', choice(wallpapers))
 
 def change_lang(lang = 'Vietnamese'):
     '''Đọc dữ liệu từ file ngôn ngữ.
     Read data from the language file.'''
     global content
     global path
-    temp = open(os.path.join(path, 'resources/languages/', lang + '.txt'), mode = 'r', encoding = 'utf-8')
+    temp = open(os.path.join'resources/languages/', lang + '.txt'), mode = 'r', encoding = 'utf-8')
     content = temp.read().splitlines()
     temp.close()
+    
+stickers = img_scan('stickers')
+wallpapers = img_scan('wallpapers')
+change_lang()
+ran_img(False)

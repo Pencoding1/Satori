@@ -1,5 +1,3 @@
-import os, sys
-from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
@@ -141,9 +139,9 @@ class Menu(Screen):
         Change the image by the button state.'''
         app = App.get_running_app()
         if state == 'normal':
-            self.speaker.source = os.path.join(cache.path, 'resources/speaker.png')
+            self.speaker.source = 'resources/speaker.png'
         else:
-            self.speaker.source = os.path.join(cache.path, 'resources/speaker_mute.png')
+            self.speaker.source = 'resources/speaker_mute.png'
         app.temp = state
 
 class Ask(Screen):
@@ -192,7 +190,7 @@ class SatoriApp(App):
         self.icon = 'resources/icon.png'
         self.title = 'Satori Komeiji'
         Window.size = (1280,720)
-        return Builder.load_file(os.path.join(cache.path, 'resources/GUI.kv'))
+        return Builder.load_file('resources/GUI.kv')
     
     def callback(self, *args):
         '''Tôi phải viết hàm này vì nếu loading_screen là screen 0 thì nó sẽ không kích hoạt event on_enter.
@@ -222,8 +220,4 @@ class SatoriApp(App):
             self.sound.stop()
             
 if __name__ == '__main__':
-    if hasattr(sys, '_MEIPASS'):
-        resource_add_path(os.path.join(sys._MEIPASS))
-        cache.path = sys._MEIPASS
-    cache.init()
     SatoriApp().run()
