@@ -1,7 +1,7 @@
 Start
 Satori will read your mind !
-Please think to an integer in range 1000.
-Satori will ask you 10 questions.
+Please think to an natural number in range 1000.
+Satori will ask you 3 questions.
 You only have to answer "Yes" or "No".
 Question number 
 Is the number you think bigger than 

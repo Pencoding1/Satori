@@ -1,7 +1,7 @@
 Bắt đầu
 Satori sẽ đọc suy nghĩ của bạn !.
-Hãy nghĩ tới 1 số nguyên trong phạm vi 1000.
-Satori sẽ hỏi bạn 10 câu hỏi.
+Hãy nghĩ tới 1 số tự nhiên trong phạm vi 1000.
+Satori sẽ hỏi bạn 3 câu hỏi.
 Bạn chỉ cần trả lời "Có" hoặc "Không".
 Câu hỏi số 
 Số bạn nghĩ lớn hơn 

@@ -28,7 +28,7 @@ source.exclude_dirs = data
 #source.exclude_patterns = 
 
 # (str) Application versioning (method 1)
-version = 1.3
+version = 1.4
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]

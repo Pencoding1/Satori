@@ -25,7 +25,7 @@
 		
 		Img:
 			source: os.path.join(cache.path, 'resources/reimu.zip')
-			anim_delay: .01
+			anim_delay: .03
 			size_hint_y: .7
 			
 		Label:
@@ -406,6 +406,7 @@ Root:
 	background_normal: os.path.join(cache.path, 'resources/spinner_normal.png')
 	background_down: os.path.join(cache.path, 'resources/spinner_down.png')
 	font_size: self.width / 6
+	sync_height: True
 
 <Img@Image>:
 	allow_stretch: True
