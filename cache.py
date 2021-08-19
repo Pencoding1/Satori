@@ -104,7 +104,7 @@ def change_lang(lang = 'Vietnamese'):
     Read data from the language file.'''
     global content
     global path
-    temp = open(os.path.join'resources/languages/', lang + '.txt'), mode = 'r', encoding = 'utf-8')
+    temp = open(os.path.join('resources/languages/', lang + '.txt'), mode = 'r', encoding = 'utf-8')
     content = temp.read().splitlines()
     temp.close()
     
