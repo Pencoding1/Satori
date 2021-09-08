@@ -6,7 +6,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['.\\'],
+             pathex=['C:\\Users\\Tedomotoji\\Documents\\GitHub\\Satori'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -21,7 +21,7 @@ a = Analysis(['main.py'],
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
-exe = EXE(pyz,
+exe = EXE(pyz, Tree('C:\\Users\\Tedomotoji\\Documents\\GitHub\\Satori\\New folder\\'),
           a.scripts,
           a.binaries,
           a.zipfiles,
@@ -34,7 +34,7 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True,
+          console=False,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,

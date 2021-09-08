@@ -1,7 +1,7 @@
 Start
 Satori will read your mind !
 Please think to an natural number in range 1000.
-Satori will ask you 10 questions.
+Satori will ask you 3 questions.
 You only have to answer "Yes" or "No".
 Question number 
 Is the number you think bigger than 
@@ -11,7 +11,7 @@ No
 The number you think is 
 Do it again
 A gift from the developer
-Thank you for playing it for 3 times.
+Thank you for playing it for 10 times.
 You can use your mobile phone
 to scan it or take a screenshot
 and use qr upload.
